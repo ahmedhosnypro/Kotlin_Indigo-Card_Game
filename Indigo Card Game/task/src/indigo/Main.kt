@@ -1,13 +1,40 @@
 package indigo
 
 fun main() {
-    println(
-        """
-        A 2 3 4 5 6 7 8 9 10 J Q K
+    val deck = Deck()
 
-        ♦ ♥ ♠ ♣
+    var action = ""
+    while (action != "exit") {
+        println("Choose an action (reset, shuffle, get, exit):")
+        action = readln()
+        when (action) {
+            "reset" -> {
+                deck.reset()
+                println("Card deck is reset.")
+            }
 
-        A♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ A♥ 2♥ 3♥ 4♥ 5♥ 6♥ 7♥ 8♥ 9♥ 10♥ J♥ Q♥ K♥ A♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ 10♦ J♦ Q♦ K♦ A♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ 10♣ J♣ Q♣ K♣
-    """.trimIndent()
-    )
+            "shuffle" -> {
+                deck.shuffle()
+                println("Card deck is shuffled.")
+            }
+
+            "get" -> {
+                println("Number of cards:")
+                val n = readln()
+                if (!n.matches(Regex("\\d+")) || n.toInt() !in 1..52) {
+                    println("Invalid number of cards.")
+                } else {
+                    deck.get(n.toInt())
+                }
+            }
+
+            "exit" -> {
+                println("Bye")
+            }
+
+            else -> println("Wrong action.")
+        }
+    }
 }
+
+
