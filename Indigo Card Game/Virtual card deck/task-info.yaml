@@ -223,9 +223,9 @@ files:
 - name: src/indigo/Deck.kt
   visible: true
   learner_created: true
-feedback_link: https://hyperskill.org/projects/214/stages/1073/implement#comment
+feedback_link: https://hyperskill.org/learn/step/16509#comment
 status: Solved
 feedback:
   message: Congratulations!
   time: "Sat, 12 Aug 2023 21:15:52 UTC"
-record: -1
+record: 2

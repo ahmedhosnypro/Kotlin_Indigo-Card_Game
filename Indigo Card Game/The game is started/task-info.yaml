@@ -467,6 +467,108 @@ files:
 
 
   learner_created: false
-feedback_link: https://hyperskill.org/projects/214/stages/1074/implement#comment
-status: Unchecked
+- name: src/indigo/data/Card.kt
+  visible: true
+  text: |-
+    package indigo.data
+
+    import indigo.util.Rank
+    import indigo.util.Suit
+
+    data class Card(val suit: Suit, val rank: Rank) {
+        override fun toString() = "$rank$suit"
+    }
+  learner_created: true
+- name: src/indigo/Deck.kt
+  visible: true
+  text: |-
+    package indigo
+
+    import indigo.data.Card
+    import indigo.util.Rank
+    import indigo.util.Suit
+
+    class Deck {
+        private val cards = mutableListOf<Card>()
+
+        init {
+            reset()
+        }
+
+        fun reset() {
+            cards.clear()
+            for (suit in Suit.values()) {
+                for (rank in Rank.values()) {
+                    cards.add(Card(suit, rank))
+                }
+            }
+        }
+
+        fun shuffle() {
+            cards.shuffle()
+        }
+
+        fun get(n: Int) {
+            if (n > cards.size) {
+                println("The remaining cards are insufficient to meet the request.")
+            } else {
+                repeat(n) {
+                    print(cards.removeAt(0).toString() + " ")
+                }
+                println()
+            }
+        }
+    }
+  learner_created: true
+- name: src/indigo/util/Suit.kt
+  visible: true
+  text: |
+    package indigo.util
+
+    enum class Suit(private val symbol: String) {
+        DIAMOND("♦"),
+        HEART("♥"),
+        SPADE("♠"),
+        CLUBS("♣");
+
+        override fun toString() = symbol
+    }
+  learner_created: true
+- name: src/indigo/util/Rank.kt
+  visible: true
+  text: |-
+    package indigo.util
+
+    enum class Rank(private val symbol: String) {
+        KING("K"),
+        QUEEN("Q"),
+        JACK("J"),
+        TEN("10"),
+        NINE("9"),
+        EIGHT("8"),
+        SEVEN("7"),
+        SIX("6"),
+        FIVE("5"),
+        FOUR("4"),
+        THREE("3"),
+        TWO("2"),
+        ACE("A");
+
+        override fun toString() = symbol
+    }
+  learner_created: true
+- name: src/indigo/player/PLayer.kt
+  visible: true
+  learner_created: true
+- name: src/indigo/player/HumanPlayer.kt
+  visible: true
+  learner_created: true
+- name: src/indigo/player/ComputerPlayer.kt
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/16510#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 13 Aug 2023 11:02:42 UTC"
 record: -1
