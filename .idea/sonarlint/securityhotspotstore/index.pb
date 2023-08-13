@@ -1,8 +1,4 @@
 
-]
--Indigo Card Game/task/src/indigo/util/Suit.kt,4/b/4bc3b37e88a22e2859112873d95a4ebbe436d599
-]
--Indigo Card Game/task/src/indigo/util/Rank.kt,e/c/ecef5790859a2fc5a9518ce04031bc9a553ad0ff
 |
 L.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_6_10.xml,2/7/27b2abeb339a12d686f8b89b9793a6970e224d32
 z
@@ -68,8 +64,6 @@ r
 B.idea/libraries/Gradle__org_assertj_assertj_swing_junit_3_17_1.xml,8/5/8539f6408114cac22386ccaaa112d01113150d84
 n
 >.idea/libraries/Gradle__org_easytesting_fest_reflect_1_4_1.xml,e/2/e26f6859c2473a043be09490817a6d913f9a7afa
-z
-J.idea/libraries/Gradle__com_github_hyperskill_hs_test_release_SNAPSHOT.xml,1/2/123df544d2770404792c2b7dedd5a16adf12eaac
 —
 g.idea/modules/Indigo Card Game/task/build/tmp/Indigo_Card_Game.Indigo_Card_Game-task-build-tmp.test.iml,b/8/b8da29f0c581dc6a19c2a6605c77dfaed8de5206
 o

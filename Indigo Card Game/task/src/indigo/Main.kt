@@ -1,16 +1,17 @@
 package indigo
 
-import indigo.player.ComputerPlayer
-import indigo.player.HumanPlayer
-import indigo.player.PLayer
 import kotlin.system.exitProcess
 
 fun main() {
     println("Indigo Card Game")
-    val playFirst = whoIsFirst()
-    val firstPlayer: PLayer = if (playFirst) HumanPlayer() else ComputerPlayer()
-    val secondPLayer: PLayer = if (playFirst) ComputerPlayer() else HumanPlayer()
-    Deck(firstPlayer, secondPLayer).start()
+    val humanFirst = whoIsFirst()
+    GameLoop(
+        Deck(
+            PLayer("Player"),
+            PLayer("Computer", true),
+            humanFirst
+        )
+    ).start()
 }
 
 fun whoIsFirst(): Boolean {

@@ -1,46 +1,32 @@
 package indigo
 
 import indigo.data.Card
-import indigo.player.PLayer
 import indigo.util.Rank
 import indigo.util.Suit
 
-class Deck(private val firstPlayer: PLayer, private val secondPlayer: PLayer) {
-    private val cards = mutableListOf<Card>()
+class Deck(val humanPlayer: PLayer, val computerPlayer: PLayer, private val humanFirst: Boolean) {
+    val cards = mutableListOf<Card>()
     private val tableCards = mutableListOf<Card>()
-    private var currentPlayer = firstPlayer
+    var currentPlayer = if (humanFirst) humanPlayer else computerPlayer
+    var lastPlayerWon: PLayer? = null
 
-    fun start() {
-        while (true) {
-            if (currentPlayer.countCards() == 0) {
-                if (cards.isEmpty()) {
-                    printCardsOnTable()
-                    println("Game Over")
-                    break
-                } else {
-                    distributeCards()
-                }
-            }
-            printCardsOnTable()
-            tableCards.add(currentPlayer.play())
-            println()
-            currentPlayer = if (currentPlayer == firstPlayer) secondPlayer else firstPlayer
+
+    fun printTableCards() {
+        if (tableCards.isEmpty()) {
+            println("No cards on the table")
+        } else {
+            println("${tableCards.size} cards on the table, and the top card is ${peak()}")
         }
     }
 
-    private fun printCardsOnTable() = println("${tableCards.size} cards on the table, and the top card is ${peak()}")
-
-    init {
-        setup()
-    }
-
-    private fun setup() {
+    fun setup() {
         cards.clear()
         for (suit in Suit.values()) {
             for (rank in Rank.values()) {
                 cards.add(Card(suit, rank))
             }
         }
+        shuffle()
         repeat(4) {
             tableCards.add(cards.removeAt(0))
         }
@@ -48,12 +34,33 @@ class Deck(private val firstPlayer: PLayer, private val secondPlayer: PLayer) {
         distributeCards()
     }
 
-    private fun distributeCards() {
+    private fun shuffle() = cards.shuffle()
+
+
+    fun distributeCards() {
         repeat(6) {
-            firstPlayer.add(cards.removeAt(0))
-            secondPlayer.add(cards.removeAt(0))
+            humanPlayer.handCard(cards.removeAt(0))
+            computerPlayer.handCard(cards.removeAt(0))
         }
     }
 
-    fun peak(): Card = tableCards.last()
+
+    fun peak(): Card? = tableCards.lastOrNull()
+
+    fun winTableCards(): List<Card> {
+        val cardsOnTable = tableCards.toList()
+        tableCards.clear()
+        return cardsOnTable
+    }
+
+    fun winAllCards(): List<Card> {
+        val wonCards = cards.toMutableList()
+        cards.clear()
+        wonCards.addAll(winTableCards())
+        return wonCards
+    }
+
+    fun putCard(card: Card) = tableCards.add(card)
+
+    fun tableSnapshot() = tableCards.toList()
 }

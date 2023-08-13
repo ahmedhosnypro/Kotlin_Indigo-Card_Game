@@ -557,7 +557,7 @@ files:
         override fun toString() = symbol
     }
   learner_created: true
-- name: src/indigo/player/PLayer.kt
+- name: src/indigo/player/AbstractPLayer.kt
   visible: true
   learner_created: true
 - name: src/indigo/player/HumanPlayer.kt
@@ -571,4 +571,4 @@ status: Solved
 feedback:
   message: Congratulations!
   time: "Sun, 13 Aug 2023 11:02:42 UTC"
-record: -1
+record: 3
