@@ -74,3 +74,17 @@ l
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+a
+1Indigo Card Game/Card deck symbols/task-info.yaml,c/b/cbac79116ca832ad177f48ea2634bb29b7fcacfc
+a
+1Indigo Card Game/Virtual card deck/task-info.yaml,5/3/530ab373da966e2c64b3d8aa589952d337799128
+]
+-Indigo Card Game/task/src/indigo/util/Suit.kt,4/b/4bc3b37e88a22e2859112873d95a4ebbe436d599
+z
+J.idea/libraries/Gradle__com_github_hyperskill_hs_test_release_SNAPSHOT.xml,1/2/123df544d2770404792c2b7dedd5a16adf12eaac
+c
+3Indigo Card Game/The game is started/task-info.yaml,6/f/6facd85bd780eaba466a9f0531012378264fa3ac
+]
+-Indigo Card Game/task/src/indigo/util/Rank.kt,e/c/ecef5790859a2fc5a9518ce04031bc9a553ad0ff
+]
+-Indigo Card Game/task/src/indigo/data/Card.kt,4/1/41df85f03255bf2097e8ff61d57a19d310a1d63a

@@ -74,3 +74,17 @@ k
 ;.idea/libraries/Gradle__com_google_code_gson_gson_2_8_9.xml,3/1/31d0d9e2bcfe779428fad96c61d30ba23a19871f
 l
 <.idea/libraries/Gradle__commons_codec_commons_codec_1_11.xml,a/1/a1a0e2aa4ffad6e938ea86b995f7e64dd1bb0b7c
+a
+1Indigo Card Game/Card deck symbols/task-info.yaml,c/b/cbac79116ca832ad177f48ea2634bb29b7fcacfc
+a
+1Indigo Card Game/Virtual card deck/task-info.yaml,5/3/530ab373da966e2c64b3d8aa589952d337799128
+]
+-Indigo Card Game/task/src/indigo/util/Suit.kt,4/b/4bc3b37e88a22e2859112873d95a4ebbe436d599
+c
+3Indigo Card Game/The game is started/task-info.yaml,6/f/6facd85bd780eaba466a9f0531012378264fa3ac
+z
+J.idea/libraries/Gradle__com_github_hyperskill_hs_test_release_SNAPSHOT.xml,1/2/123df544d2770404792c2b7dedd5a16adf12eaac
+]
+-Indigo Card Game/task/src/indigo/util/Rank.kt,e/c/ecef5790859a2fc5a9518ce04031bc9a553ad0ff
+]
+-Indigo Card Game/task/src/indigo/data/Card.kt,4/1/41df85f03255bf2097e8ff61d57a19d310a1d63a

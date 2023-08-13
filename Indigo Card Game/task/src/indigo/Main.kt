@@ -1,5 +1,7 @@
 package indigo
 
+import indigo.player.ComputerPlayer
+import indigo.player.HumanPlayer
 import kotlin.system.exitProcess
 
 fun main() {
@@ -7,8 +9,8 @@ fun main() {
     val humanFirst = whoIsFirst()
     GameLoop(
         Deck(
-            PLayer("Player"),
-            PLayer("Computer", true),
+            HumanPlayer(),
+            ComputerPlayer(),
             humanFirst
         )
     ).start()

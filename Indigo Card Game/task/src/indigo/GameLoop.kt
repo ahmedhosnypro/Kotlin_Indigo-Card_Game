@@ -1,6 +1,7 @@
 package indigo
 
 import indigo.data.Card
+import indigo.player.PLayer
 
 class GameLoop(private val deck: Deck) {
     private var firstPlayerScore = 0
@@ -14,7 +15,7 @@ class GameLoop(private val deck: Deck) {
             println()
             deck.printTableCards()
             if (distributeIfNeeded()) break
-            receiveCard(deck.currentPlayer.throwCards())
+            receiveCard(deck.currentPlayer.throwCards(deck.peak()))
             deck.currentPlayer = if (deck.currentPlayer == deck.humanPlayer) deck.computerPlayer else deck.humanPlayer
         }
     }

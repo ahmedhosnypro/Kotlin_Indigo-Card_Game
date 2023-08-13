@@ -1,6 +1,7 @@
 package indigo
 
 import indigo.data.Card
+import indigo.player.PLayer
 import indigo.util.Rank
 import indigo.util.Suit
 
